@@ -9,6 +9,7 @@ This is a basic todo app that uses the Unstated library. Unstated is a wrapper f
 ## Setup
 * Clone this repo
 * Run `npm install` or `yarn install`
+* Run `npm start` or `yarn start`
 * Add todos to the list
 
 This repo uses the _MIT License_
