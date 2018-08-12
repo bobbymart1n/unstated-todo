@@ -5,16 +5,18 @@ import TodoInput from './TodoInput';
 
 const TodoList = () => {
   return (
-      <div>
-        <TodoInput/>
-        <ul>
-          <Subscribe to={[TodoContainer]}>
-            {todoListArr => (
-              todoListArr
-            )}
-          </Subscribe>
-        </ul>
-      </div>
+      <Subscribe to={[TodoContainer]}>
+      {todoListArr => (
+        <div>
+          <TodoInput onSubmitTodo={todoListArr.handleTodoSubmit}/>
+          <ul>
+              {todoListArr.state.todoList.map((todo) => {
+                <li>{todo}</li>
+              })}
+          </ul>
+        </div>
+      )}
+      </Subscribe>
   )
 }
 
