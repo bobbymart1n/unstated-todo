@@ -10,12 +10,17 @@ type ListState = {
 
 class TodoContainer extends Container<ListState> {
   state = {
+    currentTodo: '',
     todoList: [],
   }
-  handleTodoSubmit = async (todo) => {
+  handleTodoSubmit = async (e) => {
+    e.preventDefault();
     await this.setState(state => {
-      return { todoList: state.todoList.push(todo) }
-    })
+      return state.todoList.push(state.currentTodo)
+    });
+  }
+  handleTodoChange = async (e) => {
+    await this.setState({ currentTodo: e.target.value })
   }
 }
 // render() {

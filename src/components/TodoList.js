@@ -8,10 +8,10 @@ const TodoList = () => {
       <Subscribe to={[TodoContainer]}>
       {todoListArr => (
         <div>
-          <TodoInput onSubmitTodo={todoListArr.handleTodoSubmit}/>
+          <TodoInput onTextChange={todoListArr.handleTodoChange} onSubmitTodo={todoListArr.handleTodoSubmit}/>
           <ul>
-              {todoListArr.state.todoList.map((todo) => {
-                <li>{todo}</li>
+              {todoListArr.state.todoList.map((todo, index) => {
+                return <li key={index}>{todo}</li>
               })}
           </ul>
         </div>
