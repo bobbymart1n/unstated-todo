@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { Container } from 'unstated';
-import TodoInput from './TodoInput';
-import TodoList from './TodoList';
 
 type ListState = {
+  currentTodo: string,
   todoList: array
 }
 
