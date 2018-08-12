@@ -4,18 +4,27 @@ import { Container } from 'unstated';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
-class TodoContainer extends Container {
+type ListState = {
+  todoList: array
+}
+
+class TodoContainer extends Container<ListState> {
   state = {
-    currentTodo: null
+    todoList: [],
   }
-  console.log(state);
+  handleTodoSubmit = async (todo) => {
+    await this.setState(state => {
+      return { todoList: state.todoList.push(todo) }
+    })
+  }
 }
 // render() {
 //   return (
 //     <div>
-//       <TodoInput />
-//       <TodoList />
+//     <TodoInput />
+//     <TodoList />
 //     </div>
 //   )
 // }
+
 export default TodoContainer
