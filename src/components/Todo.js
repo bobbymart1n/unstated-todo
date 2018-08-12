@@ -23,13 +23,5 @@ class TodoContainer extends Container<ListState> {
     await this.setState({ currentTodo: e.target.value })
   }
 }
-// render() {
-//   return (
-//     <div>
-//     <TodoInput />
-//     <TodoList />
-//     </div>
-//   )
-// }
 
 export default TodoContainer
