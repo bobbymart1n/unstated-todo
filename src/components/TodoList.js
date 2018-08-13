@@ -29,10 +29,4 @@ const TodoList = () => {
   )
 }
 
-// {todoListArr => (
-//   <li>
-//     {todoListArr.state}
-//   </li>
-// )}
-
 export default TodoList
